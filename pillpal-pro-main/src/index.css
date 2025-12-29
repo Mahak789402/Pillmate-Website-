@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* PillMate Design System - Light Mode */
+    --background: 165 30% 98%;
+    --foreground: 200 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 15%;
+
+    /* Primary: Teal/Mint - Healing & Trust */
+    --primary: 168 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 168 60% 55%;
+
+    /* Secondary: Soft Lavender */
+    --secondary: 250 30% 95%;
+    --secondary-foreground: 250 30% 30%;
+
+    /* Muted: Soft gray-green */
+    --muted: 165 20% 94%;
+    --muted-foreground: 200 15% 45%;
+
+    /* Accent: Warm Coral - Pills/Alerts */
+    --accent: 12 85% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Success: Medicine Taken */
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Refill Soon */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 165 25% 88%;
+    --input: 165 25% 88%;
+    --ring: 168 60% 45%;
+
+    --radius: 1rem;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(168, 60%, 45%), hsl(180, 55%, 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(165, 30%, 98%) 0%, hsl(168, 40%, 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(165, 20%, 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12, 85%, 62%), hsl(25, 90%, 58%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(168 60% 45% / 0.1);
+    --shadow-md: 0 8px 24px -8px hsl(168 60% 45% / 0.15);
+    --shadow-lg: 0 16px 48px -12px hsl(168 60% 45% / 0.2);
+    --shadow-glow: 0 0 40px hsl(168 60% 45% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 165 30% 98%;
+    --sidebar-foreground: 200 25% 15%;
+    --sidebar-primary: 168 60% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 165 30% 92%;
+    --sidebar-accent-foreground: 200 25% 15%;
+    --sidebar-border: 165 25% 88%;
+    --sidebar-ring: 168 60% 45%;
+  }
+
+  .dark {
+    --background: 200 30% 8%;
+    --foreground: 165 20% 95%;
+
+    --card: 200 25% 12%;
+    --card-foreground: 165 20% 95%;
+
+    --popover: 200 25% 12%;
+    --popover-foreground: 165 20% 95%;
+
+    --primary: 168 55% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 168 55% 60%;
+
+    --secondary: 200 20% 18%;
+    --secondary-foreground: 165 20% 90%;
+
+    --muted: 200 20% 15%;
+    --muted-foreground: 165 15% 60%;
+
+    --accent: 12 80% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 145 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 85% 55%;
+    --warning-foreground: 0 0% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 20%;
+    --input: 200 20% 20%;
+    --ring: 168 55% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(168, 55%, 50%), hsl(180, 50%, 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(200, 30%, 8%) 0%, hsl(200, 25%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(200, 25%, 14%) 0%, hsl(200, 20%, 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(12, 80%, 58%), hsl(25, 85%, 52%));
+
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 16px 48px -12px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(168 55% 50% / 0.2);
+
+    --sidebar-background: 200 25% 10%;
+    --sidebar-foreground: 165 20% 95%;
+    --sidebar-primary: 168 55% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 20% 15%;
+    --sidebar-accent-foreground: 165 20% 90%;
+    --sidebar-border: 200 20% 18%;
+    --sidebar-ring: 168 55% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-card/80 border border-border/50;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-card/90 border border-border/60;
+  }
+
+  .pill-shape {
+    @apply rounded-full;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-soft {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
